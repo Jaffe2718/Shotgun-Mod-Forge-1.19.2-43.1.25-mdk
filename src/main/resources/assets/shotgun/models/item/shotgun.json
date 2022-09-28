@@ -1,0 +1,35 @@
+{
+  "parent": "shotgun:custom/shotgun_custom",
+  "textures": {
+    "layer0": "shotgun:item/shotgun"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "shotgun:loading": 1,
+        "shotgun:load_process": 0.15
+      },
+      "model": "shotgun:custom/shotgun_loading_0"
+    },
+    {
+      "predicate": {
+        "shotgun:loading": 1,
+        "shotgun:load_process": 0.6
+      },
+      "model": "shotgun:custom/shotgun_loading_1"
+    },
+    {
+      "predicate": {
+        "shotgun:loading": 1,
+        "shotgun:load_process": 1
+      },
+      "model": "shotgun:custom/shotgun_loading_2"
+    },
+    {
+      "predicate": {
+        "shotgun:loaded": 1
+      },
+      "model": "shotgun:custom/shotgun_loaded"
+    }
+  ]
+}

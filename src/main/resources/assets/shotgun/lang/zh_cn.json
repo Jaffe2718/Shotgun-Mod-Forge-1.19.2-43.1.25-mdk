@@ -1,0 +1,9 @@
+{
+  "mod.shotgun.can_load": "霰弹枪 装填就绪",
+  "mod.shotgun.grapeshot_hit": "霰弹 击中方块",
+  "mod.shotgun.shotgun_loaded": "霰弹枪 已装填",
+  "mod.shotgun.shotgun_loading": "霰弹枪 装填中",
+  "mod.shotgun.shotgun_shot": "霰弹枪 射击",
+  "item.shotgun.carbide_alloy": "碳化合金",
+  "item.shotgun.shotgun": "霰弹枪"
+}

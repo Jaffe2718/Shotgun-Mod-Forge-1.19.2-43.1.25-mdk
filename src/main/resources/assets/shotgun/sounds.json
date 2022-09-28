@@ -1,0 +1,47 @@
+{
+  "grapeshot_hit": {
+    "subtitle": "mod.shotgun.grapeshot_hit",
+    "sounds": [
+      {
+        "name": "shotgun:grapeshot_hit",
+        "stream": true
+      }
+    ]
+  },
+  "shotgun_can_load": {
+    "subtitle": "mod.shotgun.can_load",
+    "sounds": [
+      {
+        "name": "shotgun:shotgun_can_load",
+        "stream": true
+      }
+    ]
+  },
+  "shotgun_loaded": {
+    "subtitle": "mod.shotgun.shotgun_loaded",
+    "sounds": [
+      {
+        "name": "shotgun:shotgun_loaded",
+        "stream": true
+      }
+    ]
+  },
+  "shotgun_loading": {
+    "subtitle": "mod.shotgun.shotgun_loading",
+    "sounds": [
+      {
+        "name": "shotgun:shotgun_loading",
+        "stream": true
+      }
+    ]
+  },
+  "shotgun_shot": {
+    "subtitle": "mod.shotgun.shotgun_shot",
+    "sounds": [
+      {
+        "name": "shotgun:shotgun_shot",
+        "stream": false
+      }
+    ]
+  }
+}

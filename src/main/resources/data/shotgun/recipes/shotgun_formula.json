@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "345",
+    " 78"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_nugget"
+    },
+    "3": {
+      "item": "shotgun:carbide_alloy"
+    },
+    "4": {
+      "item": "shotgun:carbide_alloy"
+    },
+    "5": {
+      "tag": "minecraft:planks"
+    },
+    "7": {
+      "item": "minecraft:tripwire_hook"
+    },
+    "8": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "shotgun:shotgun",
+    "count": 1
+  }
+}
