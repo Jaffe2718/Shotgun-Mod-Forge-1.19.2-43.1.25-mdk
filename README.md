@@ -42,25 +42,25 @@
     |   |   \---mod
     |   |       \---jaffe2718
     |   |           \---shotgun                   
-    |   |               |   MainClass.java        // 模组的主类
+    |   |               |   MainClass.java                       // 模组的主类
     |   |               |
-    |   |               +---entity                // 实体类
-    |   |               |       GrapeshotEntity.java
+    |   |               +---entity                // 实体包
+    |   |               |       GrapeshotEntity.java             // 霰弹实体类
     |   |               |
-    |   |               +---init                  // 注册类，注册游戏元素
-    |   |               |   |   EntityInit.java
-    |   |               |   |   ItemInit.java
-    |   |               |   |   SoundInit.java
+    |   |               +---init                  // 注册类的包，注册游戏元素
+    |   |               |   |   EntityInit.java                  // 用于注册实体的类
+    |   |               |   |   ItemInit.java                    // 用于注册物品的类
+    |   |               |   |   SoundInit.java                   // 用于注册音效的类
     |   |               |   |
     |   |               |   +---modelinit        // 加载模型类
-    |   |               |   |       ShotgunModelOverrides.java // 动态模型
+    |   |               |   |       ShotgunModelOverrides.java   // 动态模型
     |   |               |   |
     |   |               |   \---RendererInit     // 渲染类
-    |   |               |           RendererEntityInit.java  //注册实体渲染
+    |   |               |           RendererEntityInit.java      //注册实体渲染事件的类
     |   |               |
     |   |               \---item                 // 物品类
-    |   |                       CarbideAlloyItem.java
-    |   |                       ShotgunItem.java
+    |   |                       CarbideAlloyItem.java            // 碳化合金物品类
+    |   |                       ShotgunItem.java                 // 霰弹枪物品类
     |   |
     |   \---resources                            // 资源区
     |       |   pack.mcmeta                      // 配置文件、包的元数据
@@ -71,42 +71,42 @@
     |       |       |   sounds.json              // 用于声明音效文件
     |       |       |
     |       |       +---lang                     // 将模组的元素进行翻译
-    |       |       |       en_us.json
-    |       |       |       zh_cn.json
+    |       |       |       en_us.json                           // 英语本地化 
+    |       |       |       zh_cn.json                           // 中文本地化
     |       |       |
     |       |       +---models
     |       |       |   +---custom               // 原始模型，用于Overrides
-    |       |       |   |       shotgun_custom.json
-    |       |       |   |       shotgun_loaded.json
-    |       |       |   |       shotgun_loading_0.json
-    |       |       |   |       shotgun_loading_1.json
-    |       |       |   |       shotgun_loading_2.json
+    |       |       |   |       shotgun_custom.json              // 霰弹枪原始模型
+    |       |       |   |       shotgun_loaded.json              // 已装填模型
+    |       |       |   |       shotgun_loading_0.json           // 装载中模型0
+    |       |       |   |       shotgun_loading_1.json           // 装载中模型1
+    |       |       |   |       shotgun_loading_2.json           // 装载中模型2
     |       |       |   |
     |       |       |   \---item                 // 物品模型
-    |       |       |           carbide_alloy.json
-    |       |       |           shotgun.json
+    |       |       |           carbide_alloy.json               // 碳化合金物品模型
+    |       |       |           shotgun.json                     // 霰弹枪物品模型
     |       |       |
     |       |       +---sounds                   // 音效文件
-    |       |       |       grapeshot_hit.ogg
-    |       |       |       shotgun_can_load.ogg
-    |       |       |       shotgun_loaded.ogg
-    |       |       |       shotgun_loading.ogg
-    |       |       |       shotgun_shot.ogg
+    |       |       |       grapeshot_hit.ogg                    // 霰弹击中方块音效
+    |       |       |       shotgun_can_load.ogg                 // 霰弹枪装填就绪音效
+    |       |       |       shotgun_loaded.ogg                   // 霰弹枪装填完成音效
+    |       |       |       shotgun_loading.ogg                  // 霰弹枪装填中音效
+    |       |       |       shotgun_shot.ogg                     // 霰弹枪射击音效
     |       |       |
     |       |       \---textures                // 纹理
     |       |           \---item                // 物品纹理
-    |       |                   carbide_alloy.png
-    |       |                   shotgun.png
-    |       |                   shotgun_loaded.png
+    |       |                   carbide_alloy.png                // 碳化合金物品纹理
+    |       |                   shotgun.png                      // 霰弹枪物品纹理
+    |       |                   shotgun_loaded.png               // 已装填的霰弹枪纹理
     |       |
     |       +---data                            // 数据包
     |       |   \---shotgun
     |       |       \---recipes                 // 合成表
-    |       |               alchemy.json
-    |       |               shotgun_formula.json
+    |       |               alchemy.json                         // 碳化合金合成表
+    |       |               shotgun_formula.json                 // 霰弹枪合成表
     |       |
     |       \---META-INF
-    |               mods.toml                   // 模组信息元数据
+    |               mods.toml                                    // 模组信息元数据
     |
     \---test
         +---java
