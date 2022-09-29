@@ -113,7 +113,7 @@ public class ShotgunItem extends CrossbowItem
     public Predicate<ItemStack> getAllSupportedProjectiles() {return GUNPOWER_ONLY;}
 
     @Override  // 设置装填所需时间
-    public int getUseDuration(ItemStack itemStack) {return 30 - 3*itemStack.getEnchantmentLevel(Enchantments.QUICK_CHARGE);}
+    public int getUseDuration(ItemStack itemStack) {return 30 - 4 * itemStack.getEnchantmentLevel(Enchantments.QUICK_CHARGE);}
 
     @Override  // 装填时手部动作
     public UseAnim getUseAnimation(ItemStack p_40935_) {return UseAnim.CROSSBOW;}
