@@ -58,7 +58,7 @@
     |   |               |   \---RendererInit     // 渲染类
     |   |               |           RendererEntityInit.java      //注册实体渲染事件的类
     |   |               |
-    |   |               \---item                 // 物品类
+    |   |               \---item                 // 物品包
     |   |                       CarbideAlloyItem.java            // 碳化合金物品类
     |   |                       ShotgunItem.java                 // 霰弹枪物品类
     |   |
