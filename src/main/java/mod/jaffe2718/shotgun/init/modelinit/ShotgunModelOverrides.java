@@ -25,7 +25,8 @@ public class ShotgunModelOverrides {
                     if (livingEntity != null) {
                         if (livingEntity.isUsingItem() && itemStack.is(SHOTGUN.get())) {
                             if (itemStack.getTag() == null || itemStack.getTag().getBoolean("Charged")) return 0;
-                            else return 1.0F;
+                            else if (itemStack.getTag().getBoolean("Loading")) return 1.0F;
+                            else return 0.0F;
                         } else return 0;
                     } else return 0;
                 });

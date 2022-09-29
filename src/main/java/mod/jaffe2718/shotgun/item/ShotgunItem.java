@@ -41,14 +41,19 @@ public class ShotgunItem extends CrossbowItem
         super(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).durability(100));
     }
 
-    public static boolean isLoaded(ItemStack p_40933_) {
-        CompoundTag compoundtag = p_40933_.getTag();
+    public static boolean isLoaded(ItemStack itemStack) {
+        CompoundTag compoundtag = itemStack.getTag();
         return compoundtag != null && compoundtag.getBoolean("Charged");
     }
 
-    public static void setLoaded(ItemStack p_40885_, boolean p_40886_) {
-        CompoundTag compoundtag = p_40885_.getOrCreateTag();
-        compoundtag.putBoolean("Charged", p_40886_);
+    public static void setLoaded(ItemStack itemStack, boolean option) {
+        CompoundTag compoundtag = itemStack.getOrCreateTag();
+        compoundtag.putBoolean("Charged", option);
+    }
+
+    public static void setLoading(ItemStack itemStack, boolean option) {
+        CompoundTag compoundtag = itemStack.getOrCreateTag();
+        compoundtag.putBoolean("Loading", option);
     }
 
     @Override
@@ -67,8 +72,9 @@ public class ShotgunItem extends CrossbowItem
             }
             return InteractionResultHolder.consume(itemstack);
         }
-        else if (!player.getProjectile(itemstack).isEmpty()) {
-            if (!isLoaded(itemstack)) {
+        else if (!player.getProjectile(itemstack).isEmpty()) {       // 有子弹
+            if (!isLoaded(itemstack)) {                              // 没有装填就开始装填
+                setLoading(itemstack, true);
                 player.startUsingItem(hand);
             }
             return new InteractionResultHolder(InteractionResult.SUCCESS, player.getItemInHand(hand));
@@ -88,6 +94,7 @@ public class ShotgunItem extends CrossbowItem
 
     @Override
     public void releaseUsing(ItemStack itemStack, Level world, LivingEntity livingEntity, int timeLeft) {
+        setLoading(itemStack, false);
         if (itemStack.is(this) && !isLoaded(itemStack) && timeLeft <= 0)
         {
             if (livingEntity instanceof Player _player && !is_creative(livingEntity)){ // 消耗火药
