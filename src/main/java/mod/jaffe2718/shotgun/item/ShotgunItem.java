@@ -151,8 +151,8 @@ public class ShotgunItem extends CrossbowItem
         Vec3 view = player.getLookAngle();
         byte piercing = (byte) (itemStack.getEnchantmentLevel(Enchantments.PIERCING) + 1);
         if (!world.isClientSide() && player instanceof ServerPlayer _player){
-            for (int _index = 0; _index < 7; _index++) {
-                uncertaintyShoot(player, BASE_POWER, BASE_DAMAGE, 1, piercing, 7.0F);
+            for (int _index = 0; _index < 7 + itemStack.getEnchantmentLevel(Enchantments.PIERCING); _index++) {    // 由于霰弹不能穿透，对附魔穿透的进行弹药量上的强化
+                uncertaintyShoot(player, BASE_POWER + 1.5F * itemStack.getEnchantmentLevel(Enchantments.PIERCING), BASE_DAMAGE, 1, piercing, 7.0F);
             }
         }
         world.playSound((Player) null, player, SoundInit.SHOTGUN_SHOT.get(), SoundSource.PLAYERS, 4F, 1F);
