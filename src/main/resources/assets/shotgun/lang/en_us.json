@@ -1,9 +1,10 @@
 {
-  "mod.shotgun.can_load": "Shotgun is ready to be loaded",
-  "mod.shotgun.grapeshot_hit": "Grapeshot hits the block",
-  "mod.shotgun.shotgun_loaded": "Shotgun loaded",
-  "mod.shotgun.shotgun_loading": "Shotgun loading",
-  "mod.shotgun.shotgun_shot": "Shotgun shooting",
   "item.shotgun.carbide_alloy": "Carbide Alloy",
-  "item.shotgun.shotgun": "Shotgun"
+  "item.shotgun.shotgun": "Shotgun",
+  "mod.shotgun.can_load": "Shotgun is ready to be loaded",
+  "mod.shotgun.damp": "Shotgun damp",
+  "mod.shotgun.grapeshot_hit": "Grapeshot hits the block",
+  "mod.shotgun.loaded": "Shotgun loaded",
+  "mod.shotgun.loading": "Shotgun loading",
+  "mod.shotgun.shoot": "Shotgun shooting"
 }

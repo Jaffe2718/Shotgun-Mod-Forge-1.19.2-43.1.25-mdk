@@ -17,8 +17,17 @@
       }
     ]
   },
+  "shotgun_damp": {
+    "subtitle": "mod.shotgun.damp",
+    "sounds": [
+      {
+        "name": "shotgun:shotgun_damp",
+        "stream": true
+      }
+    ]
+  },
   "shotgun_loaded": {
-    "subtitle": "mod.shotgun.shotgun_loaded",
+    "subtitle": "mod.shotgun.loaded",
     "sounds": [
       {
         "name": "shotgun:shotgun_loaded",
@@ -27,7 +36,7 @@
     ]
   },
   "shotgun_loading": {
-    "subtitle": "mod.shotgun.shotgun_loading",
+    "subtitle": "mod.shotgun.loading",
     "sounds": [
       {
         "name": "shotgun:shotgun_loading",
@@ -36,7 +45,7 @@
     ]
   },
   "shotgun_shot": {
-    "subtitle": "mod.shotgun.shotgun_shot",
+    "subtitle": "mod.shotgun.shoot",
     "sounds": [
       {
         "name": "shotgun:shotgun_shot",

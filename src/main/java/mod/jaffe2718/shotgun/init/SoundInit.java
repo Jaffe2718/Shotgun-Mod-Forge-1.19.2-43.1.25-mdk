@@ -14,6 +14,7 @@ public class SoundInit {
 
     public static final RegistryObject<SoundEvent> GRAPESHOT_HIT = load_sound("grapeshot_hit");
     public static final RegistryObject<SoundEvent> SHOTGUN_CAN_LOAD = load_sound("shotgun_can_load");
+    public static final RegistryObject<SoundEvent> SHOTGUN_DAMP = load_sound("shotgun_damp");
     public static final RegistryObject<SoundEvent> SHOTGUN_LOADED = load_sound("shotgun_loaded");
     public static final RegistryObject<SoundEvent> SHOTGUN_LOADING = load_sound("shotgun_loading");
     public static final RegistryObject<SoundEvent> SHOTGUN_SHOT = load_sound("shotgun_shot");

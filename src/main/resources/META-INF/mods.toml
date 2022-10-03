@@ -19,7 +19,7 @@ modId="shotgun" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="1.0.0" #mandatory
+version="1.1.0" #mandatory
  # A display name for the mod
 displayName="霰弹枪模组" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
@@ -42,6 +42,11 @@ description='''
     霰弹枪的射程只有75米！！！
     注意！请使用1.19.x版本的Minecraft Java Edition使用此模组，模组依赖于forge-1.19.1-43.1.25。
     最后一点哈，这是作者第一次写模组，做工比较粗糙（嗯，应该不影响玩），在后期的更新中会制作一些粒子效果和动作效果使模组更精细。有什么bug可以向作者反馈哦（ヾ(•ω•`)o）。
+1.1.0 新版本特性
+    (1) 霰弹枪的伤害会随距离衰减。
+    (2) 霰弹枪是会进水的哦(⊙o⊙)？所以不用在水中使用霰弹枪。
+    (2) 3米以内使用霰弹枪射击有10%的概论打出会心一击，伤害高达75（37.5♡）！！！
+    (3) 更精细的粒子效果。
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.shotgun]] #optional
