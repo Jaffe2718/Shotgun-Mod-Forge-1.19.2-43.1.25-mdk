@@ -60,27 +60,53 @@ public class ShotgunItem extends CrossbowItem
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand)
     {
         ItemStack itemstack = player.getItemInHand(hand);
-        if (isLoaded(itemstack)) {                                   // 已经装填，射击，消耗耐久
-            shotgunPerformShooting(world, player, itemstack);        // 射击算法
-            if(!player.isCreative()) {                               // 消耗耐久算法
-                if (new Random().nextInt(5) >= itemstack.getEnchantmentLevel(Enchantments.UNBREAKING)){
-                    ItemStack _ist = itemstack;
-                    if(_ist.hurt(1, RandomSource.create(),null)) {
-                        _ist.shrink(1);
-                        _ist.setDamageValue(0);}
+        if (!player.isInWater()) {                                       // 不在水里面
+            if (isLoaded(itemstack)) {                                   // 已经装填，射击，消耗耐久
+                shotgunPerformShooting(world, player, itemstack);        // 射击算法
+                if(!player.isCreative()) {                               // 消耗耐久算法
+                    if (new Random().nextInt(5) >= itemstack.getEnchantmentLevel(Enchantments.UNBREAKING)){
+                        ItemStack _ist = itemstack;
+                        if(_ist.hurt(1, RandomSource.create(),null)) {
+                            _ist.shrink(1);
+                            _ist.setDamageValue(0);}
+                    }
                 }
+                return InteractionResultHolder.consume(itemstack);
             }
-            return InteractionResultHolder.consume(itemstack);
-        }
-        else if (!player.getProjectile(itemstack).isEmpty()) {       // 有子弹
-            if (!isLoaded(itemstack)) {                              // 没有装填就开始装填
-                setLoading(itemstack, true);
-                player.startUsingItem(hand);
+            else if (!player.getProjectile(itemstack).isEmpty()) {       // 有子弹
+                if (!isLoaded(itemstack)) {                              // 没有装填就开始装填
+                    setLoading(itemstack, true);
+                    player.startUsingItem(hand);
+                }
+                return new InteractionResultHolder(InteractionResult.SUCCESS, player.getItemInHand(hand));
+            } else {                                                     // 没有子弹
+                return InteractionResultHolder.fail(itemstack);
             }
-            return new InteractionResultHolder(InteractionResult.SUCCESS, player.getItemInHand(hand));
-        } else {
+        } else {                                                         // 在水里面
+            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundInit.SHOTGUN_DAMP.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+            Vec3 view = player.getLookAngle();
+            Random rd = new Random();
+            for (int i = 0; i < 5; i++) {                                // 霰弹枪受潮粒子效果
+                world.addParticle(ParticleTypes.BUBBLE,
+                        player.getX() + view.x,
+                        player.getEyeY() - 0.1F + view.y,
+                        player.getZ() + view.z,
+                        view.x + rd.nextFloat() -0.5F,
+                        view.y + rd.nextFloat() -0.5F,
+                        view.z + rd.nextFloat() -0.5F);
+                world.addParticle(ParticleTypes.BUBBLE_POP,
+                        player.getX() + view.x,
+                        player.getEyeY() - 0.1F + view.y,
+                        player.getZ() + view.z,
+                        view.x + rd.nextFloat() -0.5F,
+                        view.y + rd.nextFloat() -0.5F,
+                        view.z + rd.nextFloat() -0.5F);
+            }
+            player.swing(hand);
+            player.getCooldowns().addCooldown(itemstack.getItem(), 10);
             return InteractionResultHolder.fail(itemstack);
         }
+
     }
 
     @Override
