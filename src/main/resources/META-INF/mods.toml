@@ -45,8 +45,8 @@ description='''
 1.1.0 新版本特性
     (1) 霰弹枪的伤害会随距离衰减。
     (2) 霰弹枪是会进水的哦(⊙o⊙)？所以不用在水中使用霰弹枪。
-    (2) 3米以内使用霰弹枪射击有10%的概论打出会心一击，伤害高达75（37.5♡）！！！
-    (3) 更精细的粒子效果。
+    (3) 3米以内使用霰弹枪射击有10%左右的概率打出会心一击，穿透附魔和多重射击附魔会大大提高会心一击的概率，伤害高达75（37.5♡）！！！
+    (4) 更精细的粒子效果。
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.shotgun]] #optional
