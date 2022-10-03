@@ -2,14 +2,10 @@ package mod.jaffe2718.shotgun.entity;
 
 import com.mojang.logging.LogUtils;
 import mod.jaffe2718.shotgun.init.SoundInit;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -163,7 +159,7 @@ public class GrapeshotEntity extends AbstractArrow implements ItemSupplier
                 double distance = Math.sqrt(Math.pow(owner.getX() - pos.x, 2)
                                             + Math.pow(owner.getY() - pos.y, 2)
                                             + Math.pow(owner.getZ() - pos.z, 2));
-                if (distance < 3.0D && rd.nextInt(10) == 5){     // 3米以内，会心一击,伤害75（37.5心）, 概论10%
+                if ((distance < 3.0D) && (rd.nextInt(70) == 19)){     // 3米以内，会心一击,伤害75（37.5心）, 单子弹概率1/70
                     Entity target = entityHitResult.getEntity();
                     target.hurt(DamageSource.arrow(this, owner), 75.0F);
                     for (int i = 0; i < 5; i++) {
