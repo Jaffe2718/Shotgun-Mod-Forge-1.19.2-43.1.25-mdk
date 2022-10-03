@@ -126,7 +126,7 @@
 
 ### 项目类图展示
 
-![images](uml.png)
+![image](uml.png)
 
 # 下面引用自Forge MDK的官方使用说明
 
