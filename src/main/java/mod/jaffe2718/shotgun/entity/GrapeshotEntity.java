@@ -162,17 +162,17 @@ public class GrapeshotEntity extends AbstractArrow implements ItemSupplier
                 if ((distance < 3.0D) && (rd.nextInt(70) == 19)){     // 3米以内，会心一击,伤害75（37.5心）, 单子弹概率1/70
                     Entity target = entityHitResult.getEntity();
                     target.hurt(DamageSource.arrow(this, owner), 75.0F);
-                    for (int i = 0; i < 5; i++) {
+                    for (int i = 0; i < 7; i++) {
                         _serverLevel.sendParticles(ParticleTypes.DAMAGE_INDICATOR,
-                                target.getX() + 2.5 * rd.nextFloat(),
-                                target.getY() + 2.5 * rd.nextFloat(),
-                                target.getZ() + 2.5 * rd.nextFloat(),
+                                target.getX() + 2.5 * rd.nextFloat() - 1.25D,
+                                target.getY() + 2.5 * rd.nextFloat() - 0.75D,
+                                target.getZ() + 2.5 * rd.nextFloat() - 1.25D,
                                 0,
                                 rd.nextFloat(), rd.nextFloat(), rd.nextFloat(), 0);
                         _serverLevel.sendParticles(ParticleTypes.FLAME,
-                                target.getX() + 2.5 * rd.nextFloat(),
-                                target.getY() + 2.5 * rd.nextFloat(),
-                                target.getZ() + 2.5 * rd.nextFloat(),
+                                target.getX() + 2.5 * rd.nextFloat() - 1.25D,
+                                target.getY() + 2.5 * rd.nextFloat() - 0.75D,
+                                target.getZ() + 2.5 * rd.nextFloat() - 1.25D,
                                 0,
                                 rd.nextFloat(), rd.nextFloat(), rd.nextFloat(), 0);
                     }
